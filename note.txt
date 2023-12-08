@@ -1,0 +1,7 @@
+Penggunaan Teknologi:
+1. React
+2. Vite
+3. React Three Fiber
+4. Three JS
+5. Drei
+6. React Spring Three
