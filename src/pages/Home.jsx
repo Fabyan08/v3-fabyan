@@ -5,13 +5,12 @@ import Island from "../models/Island";
 import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
-
-/* <div className="absolute top-28 left-0 right-0 z-10 items-center flex justify-center">
-  Popup
-</div> */
+import HomeInfo from "../components/HomeInfo";
 
 const Home = () => {
-  const [isRotate, setIsRotate] = useState(false);
+  const [currentStage, setcurrentStage] = useState(1);
+
+  const [isRotating, setIsRotating] = useState(false);
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -34,10 +33,11 @@ const Home = () => {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
-      screenScale = [0, -4, -4];
+      screenScale = [3, 3, 3];
+      screenPosition = [0, -4, -4];
     }
 
-    return [screenScale, screenPosition, rotation];
+    return [screenScale, screenPosition];
   };
 
   const [islandScale, islandPosition, islandRotation] =
@@ -47,6 +47,9 @@ const Home = () => {
 
   return (
     <section className="w-full h-screen relative">
+      <div className="absolute top-28 left-0 right-0 z-10 items-center flex justify-center">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
       <Canvas
         className={`w-full h-screen bg-transparent ${
           isRotating ? "cursor-grabbing" : "cursor-grab"
@@ -63,15 +66,21 @@ const Home = () => {
             intensity={1}
           />
           <Bird />
-          <Sky />
+          <Sky isRotating={isRotating} />
           <Island
+            setCurrentStage={setcurrentStage}
             position={islandPosition}
             scale={islandScale}
             rotation={islandRotation}
             isRotating={isRotating}
             setIsRotating={setIsRotating}
           />
-          <Plane />
+          <Plane
+            position={planePosition}
+            scale={planeScale}
+            isRotating={isRotating}
+            rotation={[0, 20, 0]}
+          />
         </Suspense>
       </Canvas>
     </section>
