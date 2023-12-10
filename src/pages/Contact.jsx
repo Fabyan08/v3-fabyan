@@ -88,7 +88,7 @@ const Contact = () => {
             <input
               type="text"
               name="name"
-              className="input"
+              className="input focus:outline-blue-500"
               placeholder="You..."
               required
               value={form.name}
@@ -102,7 +102,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              className="input"
+              className="input focus:outline-blue-500"
               placeholder="You@gmail.com"
               required
               value={form.email}
@@ -116,7 +116,7 @@ const Contact = () => {
             <textarea
               type="text"
               name="message"
-              className="input"
+              className="input focus:outline-blue-500"
               placeholder="What you want to say..."
               required
               value={form.message}

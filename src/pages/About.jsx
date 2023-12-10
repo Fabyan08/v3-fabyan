@@ -26,7 +26,7 @@ const About = () => {
       </div>
       <div className="py-10 flex flex-col">
         <h3 className="subhead-text">My Skills</h3>
-        <div className="mt-16 flex flex-wrap gap-12">
+        <div className="mt-16 flex flex-wrap justify-center gap-12">
           {skills.map((skill) => (
             <div className="block-container w-20 h-20" key={skill.name}>
               <div className="btn-back rounded-xl" />
@@ -50,7 +50,7 @@ const About = () => {
               engineering. Here's my way:
             </p>
           </div>
-          <div className="mt-12 flex">
+          <div className="mt-12 flex justify-center">
             <VerticalTimeline>
               {experiences.map((experience) => (
                 <VerticalTimelineElement
@@ -61,7 +61,7 @@ const About = () => {
                       <img
                         src={experience.icon}
                         alt={experience.company_name}
-                        className="w-[60%] h-[60%] object-contain"
+                        className="w-[100%] h-[100%] object-contain"
                       />
                     </div>
                   }
@@ -91,7 +91,7 @@ const About = () => {
                     {experience.points.map((point, index) => (
                       <li
                         key={`experience-point-${index}`}
-                        className="text-black-500/50 font-normal pl-1 text-sm"
+                        className="text-black-500 font-normal pl-1 text-sm"
                       >
                         {point}
                       </li>
@@ -103,9 +103,8 @@ const About = () => {
           </div>
         </div>
       </div>
-      <hr className="border-slate-200"/>
+      <hr className="border-slate-200" />
       <CTA />
-
     </section>
   );
 };
