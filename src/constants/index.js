@@ -127,8 +127,8 @@ export const experiences = [
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Internship",
+    company_name: "Indonesia Multimedia",
     icon: mm,
     iconBg: "#FFB534",
     date: "Jan 2022 - Jun 2022",
