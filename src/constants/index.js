@@ -118,7 +118,7 @@ export const experiences = [
     company_name: "AboutMalang.com",
     icon: am2,
     iconBg: "#5551FF",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2022 - Now",
     points: [
       "Meet Expecation Award (586 articles during 3 months of training).",
       "Able and willing to produce 10 articles per day.",
